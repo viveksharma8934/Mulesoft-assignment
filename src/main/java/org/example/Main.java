@@ -16,12 +16,12 @@ public class Main {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
 
-//            statement.executeUpdate("drop table if exists Movies");
-//            statement.executeUpdate("create table Movies (id integer, name string, actor string,actress string,director string,year_of_release integer)");
-//            statement.executeUpdate("insert into Movies values(1, 'Bahubali' , 'Paresh Rawal' , 'Katrina Kaif','Rahul',2010)");
-//            statement.executeUpdate("insert into Movies values(2, 'Vikings','Ragnar Lothbrok','Lagertha','Ankit',1990)");
-//            statement.executeUpdate("insert into Movies values(3,'Hangover','Alan','Anita','Rahul1',2001)");
-//            statement.executeUpdate("insert into Movies values(4,'Heropanti','Tiger','Kriti','Karan',2012)");
+            statement.executeUpdate("drop table if exists Movies");
+            statement.executeUpdate("create table Movies (id integer, name string, actor string,actress string,director string,year_of_release integer)");
+            statement.executeUpdate("insert into Movies values(1, 'Bahubali' , 'Paresh Rawal' , 'Katrina Kaif','Rahul',2010)");
+            statement.executeUpdate("insert into Movies values(2, 'Vikings','Ragnar Lothbrok','Lagertha','Ankit',1990)");
+            statement.executeUpdate("insert into Movies values(3,'Hangover','Alan','Anita','Rahul1',2001)");
+            statement.executeUpdate("insert into Movies values(4,'Heropanti','Tiger','Kriti','Karan',2012)");
             ResultSet rs = statement.executeQuery("select * from Movies");
             ResultSet ra = statement.executeQuery("select name,actor,actress,director from Movies where actor='Alan'");
             while(rs.next())
@@ -30,12 +30,12 @@ public class Main {
                 System.out.println("name = " + rs.getString("name"));
                 System.out.println("actor ="+ rs.getString("actor"));
             }
-//            while(ra.next()){
-//                System.out.println("name = " + ra.getString("name"));
-//                System.out.println("actor = "+ra.getString("actor"));
-//                System.out.println("actress = "+ra.getString("actress"));
-//                System.out.println("director ="+ra.getString("director"));
-//            }
+            while(ra.next()){
+                System.out.println("name = " + ra.getString("name"));
+                System.out.println("actor = "+ra.getString("actor"));
+                System.out.println("actress = "+ra.getString("actress"));
+                System.out.println("director ="+ra.getString("director"));
+            }
         }
         catch(SQLException e)
         {
